@@ -1,5 +1,5 @@
 {
- Title: "Testing Project",
-  Play: "Play.html",
-  Thumbnail: "TestingThumbnail.svg"
+  "Title": "Testing Project",
+  "Play": "Play.html",
+  "Thumbnail": "TestingThumbnail.svg"
 }
