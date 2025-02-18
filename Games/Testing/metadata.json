@@ -2,5 +2,6 @@
   "Title": "Testing Project",
   "Play": "Play.html",
   "Thumbnail": "TestingThumbnail.svg",
-  "Status": "down"
+  "Status": "down",
+  "DisabledOptions": ["Play", "Download"]
 }
