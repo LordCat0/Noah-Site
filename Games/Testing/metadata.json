@@ -2,5 +2,7 @@
   "Title": "Testing Project",
   "Play": "Play.html",
   "Thumbnail": "TestingThumbnail.svg",
-  "Status": "down"
+  "Status": "down",
+  "Description": "Hello world! \n maybe goodbye world??",
+  "Version": "5.2"
 }
