@@ -2,7 +2,5 @@
   "Title": "Testing Project",
   "Play": "Play.html",
   "Thumbnail": "TestingThumbnail.svg",
-  "Status": "down",
-  "Description": "Hello world! \n maybe goodbye world??",
-  "Version": "5.2"
+  "Description": "Just a testing/placeholder game, should be gone soon",
 }
