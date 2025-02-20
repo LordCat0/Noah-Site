@@ -112,8 +112,7 @@ async function InitProjViewer(Id, Type) {
     if (!document.getElementById("Download").hasAttribute("disabled")){document.getElementById("Download").onclick = function(){
         GetHtmlBlob().then((blob) => {
             const a = document.createElement('a')
-            a.download = `${metadata.Title}.html`
-            a.href = blob
+            a.download = blob
             a.click()
             a.remove()
             URL.revokeObjectURL(blob)
