@@ -83,10 +83,10 @@ async function InitProjViewer(Id, Type) {
         if ((metadata.Status) && (metadata.Status == "down" || metadata.Status == "maintenance")){document.querySelector(".ProjNotes #ProjWarning").style.display = 'block'; document.querySelector(".ProjNotes #ProjWarning").textContent = (metadata.Status == "down" ? "⚠️Service is down⚠️" : "🛠️Service is under maintenance🛠️"); document.querySelector(".ProjNotes #ProjWarning").dataset.type = metadata.Status}
     }
     async function GetHtmlBlob(){
-        if (location.hostname == 'noahdashboard.com'){
+        if (location.hostname == 'noahsite.net'){
             return `/Games/${Id}/${metadata.Play}`
         }else{
-            return `https://www.noahdashboard.com/Games/${Id}/${metadata.Play}`
+            return `https://www.noahsite.net/Games/${Id}/${metadata.Play}`
         }
     }
     function ActivateIframe(){
