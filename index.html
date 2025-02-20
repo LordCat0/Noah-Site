@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noah's Dashboard</title>
+    <link rel="stylesheet" href="./CSS/mainStyle.css">
+    <script src="./Scripts/ErrorHandler.js"></script>
+    <script src="./Scripts/JsFunctions"></script>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+        <img src="./Media/PageIcon.png">
+        <span>Noah's Dashboard</span>
+        </div>
+        <div class="linkcontainer">
+            <div>
+                <a class="link-text" href="#Home">Home</a>
+                <a class="link-icon" href="#Home"><img draggable="false" src="./Media/Icons/Home.svg"></a>
+            </div>
+            <div>
+                <a class="link-text" href="#Games">Games</a>
+                <a class="link-icon" href="#Games"><img draggable="false" src="./Media/Icons/Games.svg"></a>
+            </div>
+            <div>
+                <a class="link-text" href="#Websites">Websites</a>
+                <a class="link-icon" href="#Websites"><img draggable="false" src="./Media/Icons/Website.svg"></a>
+            </div>
+            <div>
+                <a class="link-text" id="ComingSoon">Api's (Coming soon!)</a>
+                <a class="link-icon"><img style="color: rgba(255, 255, 255, 0.5);" draggable="false" src="./Media/Icons/Api.svg"></a>
+            </div>
+            <div>
+                <a class="link-text" href="mailto:noahcatz@outlook.com">Contact me</a>
+                <a class="link-icon" href="mailto:noahcatz@outlook.com"><img draggable="false" src="./Media/Icons/Mail.svg"></a>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <noscript><h1 style="color: white; text-align: center;">Please enable javascript to use this website!</h1></noscript>
+        <div class="StaticHomePage" style="display: none;">
+            <div id="AboutMe">
+            <h1>About Me</h1>
+            <p>Hello! I'm a person who works on stuff I find interesting</p>
+            <p>I've currently been on this planet for <span id="seconds">-</span> seconds</p>
+            <br>
+            <h2>I picked up coding as a hobby, so I learnt these below..</h2>
+            <ul>
+                <li>HTML (Language for making websites like this one!)</li>
+                <li>Javascript (Primary language for websites to make them interactive)</li>
+                <li>CSS (Makes websites look good, hard to learn lol)</li>
+                <li>Python (Very popular for being easy to use)</li>
+                <li>Lua (I use lua in roblox scripting games)</li>
+            </ul>
+            <br>
+            <h2>Here's what im still learning..</h2>
+            <ul>
+                <li>React (Combines html and javascript)</li>
+                <li>Svelte (Very similar to react)</li>
+                <li>Python flask (used for making website servers)</li>
+                <li>Express js (similar to flask but for javascript)</li>
+            </ul>
+            <br>
+            <h2>I also like cats alot, idk why</h2>
+            <p>So you'll see me posting cat memes every once and a while</p>
+        </div>
+        <div id="MyStuff">
+            <h1>Where you can find my stuff</h1>
+            <p>I usually post games under the <a href="#Games">Games Section</a>. Otherwise all of my other projects will be posted under the <a href="#Websites">Websites section</a></p>
+            <p>As soon as I setup my api server, free api's will be posted for free :)</p>
+            <img src="./Media/BuyWirelessDevice.jpg">
+        </div>
+        </div>
+        <div class="ItemList" style="display: none;">
+            <input type="search" placeholder="Search">
+            <ul></ul>
+        </div>
+        <div class="ProjectView" style="display: none;">
+            <h1>{Title goes here I think}</h1>
+            <div class="Thumb">
+                <img id="ThumbImg">
+                <img id="Icon" src="./Media/Icons/Play.svg">
+            </div>
+            <div class="ButtonContainer">
+                <button id="Play">Play</button>
+                <button id="Open">Open in new tab</button>
+                <button id="Download">Download</button>
+            </div>
+            <div style="display: none;" class="ProjNotes">
+                <h2 style="display: none;">Description</h2>
+                <p style="display: none;"></p>
+                <h3 style="display: none;">Version: 1.0</h3>
+                <h1 style="display: none;" id="ProjWarning"></h1>
+            </div>
+        </div>
+    </main>
+    <script src="./Scripts/PageGenerator.js"></script>
+    <script src="./Scripts/SearchFunction.js"></script>
+</body>
+</html>
