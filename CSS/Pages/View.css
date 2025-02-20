@@ -1,0 +1,125 @@
+.ProjectView{
+    color: #ffffffde;
+}
+
+.ProjectView h1{
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.Thumb{
+    margin: 0 auto;
+    width: 480px;
+    height: 360px;
+    position: relative;
+}
+
+.Thumb #ThumbImg{
+    filter: brightness(0.5);
+    
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    width: 480px;
+    height: 360px;
+    background: black;
+}
+
+.Thumb #Icon{
+    width: 20%;
+    height: 20%;
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.Thumb #Icon:hover{
+    filter: brightness(0.8);
+}
+
+.Thumb iframe{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    width: 480px;
+    height: 360px;
+
+    background-color: white;
+    border: none;
+}
+
+.ButtonContainer{
+    display: flex;
+    justify-content: space-around;
+    width: 480px;
+    margin: 0 auto;
+
+    margin-bottom: 30px;
+}
+
+.ButtonContainer button{
+    flex-basis: 33%;
+    height: 25px;
+    border: none;
+    cursor: pointer;
+
+    --button-border-width: 5px
+}
+
+.ButtonContainer button#Play{
+    background-color: #a6fa87;
+    border: var(--button-border-width) solid #a6fa87;
+}
+
+.ButtonContainer button#Open{
+    background-color: #fad587;
+    border: var(--button-border-width) solid #fad587;
+}
+
+.ButtonContainer button#Download{
+    background-color: #87c2fa;
+    border: var(--button-border-width) solid #87c2fa;
+}
+
+.ButtonContainer button:disabled{
+    filter: brightness(0.8);
+    cursor: default;
+}
+
+.ButtonContainer button:hover:not(:disabled){
+    filter: brightness(0.9);
+}
+
+.ButtonContainer button:first-child{
+    border-bottom-left-radius: 5px;
+}
+
+.ButtonContainer button:last-child{
+    border-bottom-right-radius: 5px;
+}
+
+.ProjNotes{
+    margin: 0 auto;
+    width: 480px;
+    height: max-content;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 5px solid rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+}
+
+.ProjNotes h2{
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.ProjNotes h1[data-type="down"]{
+    color: rgb(255, 67, 67);
+}
+
+.ProjNotes h1[data-type="maintenance"]{
+    color: cornflowerblue;
+}

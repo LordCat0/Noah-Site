@@ -1,0 +1,36 @@
+#AboutMe{
+    float: left;
+    margin-left: 5%;
+    z-index: 1;
+}
+
+#MyStuff{
+    float: right;
+    margin-right: 5%;
+    z-index: 2;
+}
+
+#AboutMe, #MyStuff{
+    color: #ffffffde;
+}
+
+#MyStuff a{
+    text-decoration: none;
+    color: cornflowerblue;
+}
+
+#MyStuff a:hover{
+    text-decoration:underline
+}
+
+#MyStuff img{
+    width: 550px;
+    height: 500px;
+}
+
+@media (max-width: 1598px){
+    #MyStuff{
+        float: left;
+        margin-left: 5%;
+    }
+}

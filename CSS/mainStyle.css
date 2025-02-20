@@ -1,0 +1,84 @@
+body{
+    background-color: #242424;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+nav{
+    display: flex;
+    position: sticky;
+    background-color: rgb(19, 19, 19);
+    width: 100%;
+
+    z-index: 1;
+    height: 47px
+}
+
+nav div.linkcontainer{
+    display: flex;
+    width: 76%;
+    justify-content: space-evenly;
+}
+
+nav div.linkcontainer div a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    user-select: none;
+
+}
+
+a#ComingSoon{
+    color: rgba(255, 255, 255, 0.5);
+}
+
+nav div img{
+    border-radius: 5px;
+}
+
+nav div span{
+    display: flex;
+    align-items: center;
+    color: white;
+    font-weight: 700;
+    margin-left: 20px;
+}
+
+nav div.logo{
+    display: flex;
+}
+
+.link-icon{
+    display: none !important;
+}
+
+.link-icon img{
+    width: 35px;
+    align-items: center;
+}
+
+@media (max-width: 750px){
+    .link-text{
+        display: none !important;
+    }
+    .link-icon{
+        display: flex !important;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
