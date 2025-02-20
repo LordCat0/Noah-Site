@@ -1,0 +1,26 @@
+function Hide(Element){
+    Element.classList.add("hiddenByScript")
+    Element.setAttribute("PrevDisplay", window.getComputedStyle(Element).display)
+    Element.style.display = 'none'
+}
+
+function ShowAllHidden(){
+    document.querySelectorAll(".hiddenByScript").forEach((Element) => {
+        Element.style.display = Element.getAttribute("PrevDisplay")
+        Element.removeAttribute("PrevDisplay")
+        Element.classList.remove("hiddenByScript")
+    })
+}
+
+function SetElementTemporary(Element){
+    Element.classList.add("Temporary")
+    return Element
+}
+
+function DeleteAllTemporaryElements(){
+    document.querySelectorAll(".Temporary").forEach((Element) => Element.remove())
+}
+
+function repeatItem(arr, item, times) {
+    return arr.concat(Array(times).fill(item));
+  }
