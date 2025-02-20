@@ -2,7 +2,7 @@
   "Title": "Wordl",
   "Play": "Play.html",
   "Thumbnail": "Thumbnail.png",
-  "Description": "This is my version of wordle, except spelled wrong and home to tons of glitches. Word refreshes every day. Hope you enjoy :p",
+  "Description": "This is my version of wordle, except spelled wrong and home to tons of glitches. Word refreshes every day. The game needs to be downloaded or opened in a new tab! Hope you enjoy :p",
   "Version": "1.0",
   "disabledOptions": ["Play"]
 }
