@@ -135,7 +135,7 @@ async function LoadWebListPage(Type){
     }
     const items = await response.json();
     console.log(items)
-    if (items.length <= 0){
+    if (items.filter((item) => !SkipFiles.includes(item.name)).length <= 0){
             const noItemsElement = SetElementTemporary(document.createElement('h2'))
             noItemsElement.textContent = `No ${Type} for now..`
             noItemsElement.style = 'color: white; text-align: center'
