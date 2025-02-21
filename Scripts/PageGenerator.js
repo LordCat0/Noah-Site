@@ -134,7 +134,14 @@ async function LoadWebListPage(Type){
         throw new Error(`Failed to fetch ${Type} list`)
     }
     const items = await response.json();
-
+    console.log(items)
+    if (items.length <= 0){
+            const noItemsElement = SetElementTemporary(document.createElement('h2'))
+            noItemsElement.textContent = `No ${Type} for now..`
+            noItemsElement.style = 'color: white; text-align: center'
+            document.querySelector('main').append(noItemsElement)
+    }
+        
     (DevMode ? repeatItem([], items[1], 12) : items).forEach(Item => {
         if (SkipFiles.includes(Item.name)){
             return;
