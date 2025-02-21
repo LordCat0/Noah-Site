@@ -82,12 +82,18 @@ async function InitProjViewer(Id, Type) {
         if (metadata.Version){document.querySelector(".ProjNotes h3").style.display = 'block'; document.querySelector(".ProjNotes h3").textContent = `Version: ${metadata.Version}`}
         if ((metadata.Status) && (metadata.Status == "down" || metadata.Status == "maintenance")){document.querySelector(".ProjNotes #ProjWarning").style.display = 'block'; document.querySelector(".ProjNotes #ProjWarning").textContent = (metadata.Status == "down" ? "⚠️Service is down⚠️" : "🛠️Service is under maintenance🛠️"); document.querySelector(".ProjNotes #ProjWarning").dataset.type = metadata.Status}
     }
-    async function GetHtmlBlob(){
-        if (location.hostname == 'noahsite.net'){
-            return `/Games/${Id}/${metadata.Play}`
-        }else{
-            return `https://www.noahsite.net/Games/${Id}/${metadata.Play}`
+        function GetHtmlLink(){
+                if (location.hostname == 'noahsite.net'){
+                            return `/Games/${Id}/${metadata.Play}`
+                }else{
+                            return `https://www.noahsite.net/Games/${Id}/${metadata.Play}`
+                }
         }
+    async function GetHtmlBlob(){
+        const HtmlResponse = await fetch(GetHtmlLink())
+        const RawHtml = await HtmlResponse.text()
+        const blob = new Blob([RawHtml], {type: "text/html"})
+        return URL.createObjectURL(blob)
     }
     function ActivateIframe(){
             Hide(document.getElementById("Icon"))
@@ -101,20 +107,23 @@ async function InitProjViewer(Id, Type) {
 
             const Iframe = SetElementTemporary(document.createElement("iframe"))
             fullscreenbutton.onclick = function(){Iframe.requestFullscreen()}
-            GetHtmlBlob().then((blob) => {Iframe.src = blob, URL.revokeObjectURL(blob)})
+            Iframe.src = GetHtmlLink()
             Hide(document.getElementById("ThumbImg"))
             document.querySelector(".Thumb").append(Iframe)
     }
     if (!document.getElementById("Play").hasAttribute("disabled")){document.getElementById("Play").onclick = ActivateIframe}
     if (!document.getElementById("Play").hasAttribute("disabled")){document.getElementById("Icon").onclick = ActivateIframe}
 
-    if (!document.getElementById("Open").hasAttribute("disabled")){document.getElementById("Open").onclick = function(){GetHtmlBlob().then((blob) => window.open(blob))}}
+    if (!document.getElementById("Open").hasAttribute("disabled")){document.getElementById("Open").onclick = function(){window.open(GetHtmlLink())}}
     if (!document.getElementById("Download").hasAttribute("disabled")){document.getElementById("Download").onclick = function(){
-            const a = document.createElement('a')
-            a.download = metadata.Title
-            a.href = `https://www.noahsite.net/Games/${Id}/${metadata.Play}`
-            a.click()
-            a.remove()
+            GetHtmlBlob().then((blobUrl) => {
+                    const a = document.createElement('a')
+                    a.download = metadata.Title
+                    a.href = blobUrl
+                    a.click()
+                    a.remove()
+                    URL.revokeObjectURL(blobUrl)
+            })
     }}
     ViewPage.style.display = 'block'
 }
