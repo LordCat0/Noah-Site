@@ -47,6 +47,7 @@
             <p>I've currently been on this planet for <span id="seconds">-</span> seconds</p>
             <script>
                 const secondcounter = document.getElementById("seconds")
+                secondcounter.textContent = Math.floor((new Date() - new Date("2010-09-22")) / 1000)
                 if(!secondcounter){throw new Error("Failed to find second counter")}
                 setInterval(() => {
                     secondcounter.textContent = Math.floor((new Date() - new Date("2010-09-22")) / 1000)
