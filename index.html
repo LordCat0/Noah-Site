@@ -33,8 +33,8 @@
                 <a class="link-icon"><img style="color: rgba(255, 255, 255, 0.5);" draggable="false" src="./Media/Icons/Api.svg"></a>
             </div>
             <div>
-                <a class="link-text" href="https://github.com/Noahcatz">Contact me</a>
-                <a class="link-icon" href="https://github.com/Noahcatz"><img draggable="false" src="./Media/Icons/Mail.svg"></a>
+                <a class="link-text" href="mailto:noahcatz@outlook.com">Contact me</a>
+                <a class="link-icon" href="mailto:noahcatz@outlook.com"><img draggable="false" src="./Media/Icons/Mail.svg"></a>
             </div>
         </div>
     </nav>
@@ -45,6 +45,13 @@
             <h1>About Me</h1>
             <p>Hello! I'm a person who works on stuff I find interesting</p>
             <p>I've currently been on this planet for <span id="seconds">-</span> seconds</p>
+            <script>
+                const secondcounter = document.getElementById("seconds")
+                if(!secondcounter){throw new Error("Failed to find second counter")}
+                setInterval(() => {
+                    secondcounter.textContent = Math.floor((new Date() - new Date("2010-09-22")) / 1000)
+                }, 1000)
+            </script>
             <br>
             <h2>I picked up coding as a hobby, so I learnt these below..</h2>
             <ul>
